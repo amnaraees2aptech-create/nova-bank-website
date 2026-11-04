@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — NovaBank USA Client Portal</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body style="background: #0A192F;">
+
+  <!-- Top Demo Banner -->
+  <div class="demo-disclaimer-banner">
+    <div class="container d-flex justify-between align-center flex-wrap gap-2">
+      <div class="d-flex align-center">
+        <span class="demo-tag"><i class="fa-solid fa-flask me-1"></i> Demo Auth</span>
+        <span>Educational Prototype • Click "1-Click Demo Login" below to test without typing</span>
+      </div>
+      <div>
+        <a href="index.html" class="demo-banner-link"><i class="fa-solid fa-house me-1"></i> Return Home</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-page-wrapper">
+    <div class="auth-card-container">
+      
+      <!-- Left Side: Brand Story & Trust Proof -->
+      <div class="auth-sidebar-side">
+        <div>
+          <a href="index.html" class="d-inline-flex mb-3">
+            <img src="assets/images/logo-white.svg" alt="NovaBank USA" height="38">
+          </a>
+          
+          <div class="badge badge-warning mb-3">
+            <i class="fa-solid fa-shield-halved me-1"></i> Encrypted Session (AES-256)
+          </div>
+
+          <h3 class="fw-bold text-white mb-2">Institutional Capital Protection &amp; Liquidity</h3>
+          <p class="text-white-50 small mb-4">
+            Access your accounts, initiate instant FedNow &amp; wire transfers, view statements, and manage titanium debit card controls.
+          </p>
+
+          <div class="p-3 mb-3 rounded" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="text-gold small fw-bold mb-1">
+              <i class="fa-solid fa-circle-check me-1"></i> Private Wealth Guarantee
+            </div>
+            <p class="text-white-50 small mb-0">
+              Deposits insured to $250,000 via FDIC pass-through coverage. Real-time multi-factor cryptographic verification.
+            </p>
+          </div>
+        </div>
+
+        <div class="pt-3 border-top small text-white-50" style="border-color: rgba(255,255,255,0.1) !important;">
+          <div>Member FDIC • Equal Housing Lender</div>
+          <div class="mt-1">NovaBank USA Headquarters: 300 Park Ave, New York, NY</div>
+        </div>
+      </div>
+
+      <!-- Right Side: Login Form with 1-Click Demo Fill -->
+      <div class="auth-form-side">
+        <div class="d-flex justify-between align-center mb-3">
+          <div>
+            <h2 class="fw-bold text-navy mb-1">Sign In</h2>
+            <p class="text-muted small">Enter your credentials to enter the online client portal.</p>
+          </div>
+          <a href="index.html" class="text-muted small"><i class="fa-solid fa-arrow-left me-1"></i> Home</a>
+        </div>
+
+        <!-- Quick Demo Credential Autofill Pills -->
+        <div class="p-3 mb-3 rounded border" style="background: #F8FAFC;">
+          <span class="text-uppercase text-muted fw-bold fs-sm d-flex align-center gap-1 mb-2">
+            <i class="fa-solid fa-wand-magic-sparkles text-gold"></i> Instant Demo Login Shortcuts:
+          </span>
+          <div class="d-flex flex-wrap gap-2">
+            <button type="button" class="btn btn-sm btn-outline-navy" id="btnFillCustomerDemo">
+              <i class="fa-solid fa-user me-1 text-primary"></i> Customer Demo (Alexander Hayes)
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-navy" id="btnFillAdminDemo">
+              <i class="fa-solid fa-user-shield me-1 text-danger"></i> Admin Operations Portal
+            </button>
+          </div>
+        </div>
+
+        <form id="loginDemoForm">
+          <div class="form-group">
+            <label for="loginEmail" class="form-label">Online ID / Work Email</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+              <input type="email" class="form-control" id="loginEmail" placeholder="e.g. alexander.hayes@novabank.us" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="d-flex justify-between align-center mb-1">
+              <label for="loginPassword" class="form-label mb-0">Password</label>
+              <a href="#" class="small text-muted" data-open-modal="forgotPasswordModal">Forgot Password?</a>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+              <input type="password" class="form-control" id="loginPassword" placeholder="••••••••••••" required>
+              <button class="btn btn-outline-secondary" type="button" id="togglePasswordBtn">
+                <i class="fa-regular fa-eye" id="passwordEyeIcon"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="d-flex justify-between align-center mb-3">
+            <label class="d-flex align-center gap-1 small text-muted cursor-pointer">
+              <input type="checkbox" id="rememberMe" checked>
+              <span>Remember this device</span>
+            </label>
+            <span class="badge badge-success">
+              <i class="fa-solid fa-shield-check me-1"></i> 2FA Enforced
+            </span>
+          </div>
+
+          <button type="submit" class="btn btn-navy w-100 py-2 mb-3" id="submitLoginBtn">
+            <i class="fa-solid fa-arrow-right-to-bracket me-2"></i> Authenticate &amp; Sign In
+          </button>
+
+          <div class="text-center mb-2">
+            <span class="text-muted small">or authenticate with hardware passkey:</span>
+          </div>
+
+          <button type="button" class="btn btn-outline-secondary w-100 py-2 mb-3 d-flex align-center justify-center gap-2" id="btnBiometricLogin">
+            <i class="fa-solid fa-fingerprint text-primary fs-lg"></i>
+            <span class="small fw-semibold">Sign in with FaceID / TouchID / FIDO2</span>
+          </button>
+
+          <div class="text-center pt-2 border-top">
+            <p class="text-muted small">
+              New client? <a href="register.html" class="fw-bold text-navy">Apply for an Account</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Forgot Password Simulated Modal -->
+  <div class="modal-overlay" id="forgotPasswordModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h4 class="text-white fw-bold"><i class="fa-solid fa-key me-2 text-gold"></i> Password Recovery Simulation</h4>
+        <button type="button" class="btn-close" data-close-modal>&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted small mb-3">
+          In our banking environment, a time-sensitive encrypted token is dispatched via SMS or hardware token.
+        </p>
+        <div class="form-group mb-3">
+          <label class="form-label">Registered Email Address</label>
+          <input type="email" class="form-control" value="alexander.hayes@novabank.us">
+        </div>
+        <div class="p-2 rounded small text-muted" style="background: #F1F5F9;">
+          <i class="fa-solid fa-circle-info text-primary me-1"></i> For this showcase, click the <strong>"Customer Demo"</strong> shortcut button on the login screen to enter immediately.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-close-modal>Close</button>
+        <button type="button" class="btn btn-gold btn-sm" onclick="NovaApp.showToast('Simulated recovery instructions sent to email.', 'info'); NovaApp.closeModal('forgotPasswordModal');">Send Reset Link</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/demo.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/login.js"></script>
+</body>
+</html>

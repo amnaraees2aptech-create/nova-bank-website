@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B3A6B"/>
+      <stop offset="100%" stop-color="#0A192F"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="50" fill="url(#avatarBg)"/>
+  <!-- Subtle gold border -->
+  <circle cx="50" cy="50" r="48" stroke="#D4AF37" stroke-width="2"/>
+  <!-- Head & Shoulders -->
+  <circle cx="50" cy="40" r="18" fill="#FDE68A"/>
+  <path d="M22 84 C24 64, 38 58, 50 58 C62 58, 76 64, 78 84 Z" fill="#E2E8F0"/>
+  <!-- Collar / Tie -->
+  <polygon points="50,62 44,78 50,86 56,78" fill="#C5A059"/>
+  <!-- Initials overlay badge -->
+  <circle cx="78" cy="22" r="14" fill="#0A192F" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="78" y="26" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">AH</text>
+</svg>

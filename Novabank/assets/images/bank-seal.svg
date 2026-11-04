@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <defs>
+    <linearGradient id="sealGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3C64F"/>
+      <stop offset="50%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#8C6F2B"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="76" stroke="url(#sealGold)" stroke-width="3" stroke-dasharray="4 2" fill="#0A192F"/>
+  <circle cx="80" cy="80" r="68" stroke="url(#sealGold)" stroke-width="1.5" fill="none"/>
+  <circle cx="80" cy="80" r="48" fill="#112240" stroke="url(#sealGold)" stroke-width="1"/>
+  <!-- Eagle / Nova emblem -->
+  <path d="M80 50 L84 65 L98 68 L86 76 L89 90 L80 81 L71 90 L74 76 L62 68 L76 65 Z" fill="url(#sealGold)"/>
+  <circle cx="80" cy="73" r="3" fill="#FFFFFF"/>
+  <text x="80" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="800" fill="#E2E8F0" text-anchor="middle" letter-spacing="1">MEMBER FDIC</text>
+  <text x="80" y="116" font-family="'Plus Jakarta Sans', sans-serif" font-size="6" font-weight="600" fill="#C5A059" text-anchor="middle" letter-spacing="1">EQUAL HOUSING LENDER</text>
+  <!-- Curved perimeter text simulation -->
+  <text x="80" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="800" fill="#C5A059" text-anchor="middle" letter-spacing="2">★ NOVABANK USA NATIONAL CHARTER ★</text>
+  <text x="80" y="142" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="700" fill="#94A3B8" text-anchor="middle" letter-spacing="1.5">EST. 2012 • NEW YORK, NY</text>
+</svg>

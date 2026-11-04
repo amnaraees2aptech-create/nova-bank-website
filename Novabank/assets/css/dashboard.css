@@ -1,0 +1,450 @@
+/* ===================================================================
+   NovaBank USA — Standalone Frontend Showcase
+   Dashboard Stylesheet (Pure CSS, No Frameworks)
+   =================================================================== */
+
+.app-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.app-sidebar {
+  width: 260px;
+  background: var(--nb-navy-950);
+  color: #CBD5E1;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-brand img {
+  height: 36px;
+  width: auto;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 16px 12px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.sidebar-section-title {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 12px 14px 6px;
+}
+
+.sidebar-menu li {
+  margin-bottom: 4px;
+}
+
+.sidebar-menu .nav-item-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  color: #94A3B8;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: var(--transition-smooth);
+}
+
+.sidebar-menu .nav-item-link i {
+  font-size: 1.15rem;
+  width: 22px;
+  text-align: center;
+  color: #64748B;
+}
+
+.sidebar-menu .nav-item-link:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-menu .nav-item-link:hover i {
+  color: var(--nb-gold-400);
+}
+
+.sidebar-menu .nav-item-link.active {
+  color: #FFFFFF;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.16) 0%, rgba(212, 175, 55, 0.04) 100%);
+  border-left: 3.5px solid var(--nb-gold-400);
+}
+
+.sidebar-menu .nav-item-link.active i {
+  color: var(--nb-gold-400);
+}
+
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--nb-gold-500);
+}
+
+.sidebar-user-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.sidebar-user-tier {
+  font-size: 0.72rem;
+  color: var(--nb-gold-400);
+}
+
+/* App Main */
+.app-main {
+  margin-left: 260px;
+  flex-grow: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--nb-border);
+  padding: 14px 28px;
+  position: sticky;
+  top: 0;
+  z-index: 1010;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-greeting-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--nb-navy-900);
+}
+
+.icon-btn-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--nb-bg-body);
+  border: 1px solid var(--nb-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nb-navy-900);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.icon-btn-badge:hover {
+  background: #E2E8F0;
+}
+
+.app-content {
+  padding: 28px;
+  flex-grow: 1;
+}
+
+/* Dashboard Metric Stat Cards */
+.stat-card {
+  background: #FFFFFF;
+  border: 1px solid var(--nb-border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.stat-card.featured-balance {
+  background: linear-gradient(135deg, #0A192F 0%, #112A4F 100%);
+  color: #FFFFFF;
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.stat-amount {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 10px 0 6px;
+  letter-spacing: -0.5px;
+}
+
+/* Virtual 3D Titanium Debit Card */
+.virtual-card-wrapper {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 360px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+.virtual-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.virtual-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.virtual-card-front, .virtual-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  padding: 22px;
+  color: #FFFFFF;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(10, 25, 47, 0.25);
+}
+
+.virtual-card-front {
+  background: linear-gradient(135deg, #071529 0%, #0E274D 50%, #15325E 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.virtual-card-back {
+  background: linear-gradient(135deg, #071529 0%, #112A4F 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.magnetic-strip {
+  width: 100%;
+  height: 38px;
+  background: #02070D;
+}
+
+.card-cvv-panel {
+  background: #FFFFFF;
+  margin: 0 20px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-align: right;
+  font-family: monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0A192F;
+}
+
+.card-chips-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.emv-chip {
+  width: 42px;
+  height: 30px;
+}
+
+.contactless-icon {
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card-number-display {
+  font-family: 'Outfit', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.card-footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-holder-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Pure CSS Cash Flow Bar Chart (Replacing Chart.js with pure basic CSS!) */
+.pure-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  height: 200px;
+  padding: 20px 10px 0;
+  border-bottom: 2px solid var(--nb-border);
+}
+
+.chart-bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bars-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 100%;
+}
+
+.chart-bar {
+  width: 18px;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease;
+  position: relative;
+}
+
+.chart-bar.inflow { background-color: var(--nb-success); }
+.chart-bar.outflow { background-color: var(--nb-navy-900); }
+
+.chart-bar-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--nb-text-muted);
+  margin-top: 8px;
+}
+
+/* Quick Send Recipients */
+.quick-recipients-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.recipient-pill {
+  flex: 0 0 auto;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--nb-border);
+  background: var(--nb-surface);
+  transition: var(--transition-smooth);
+}
+
+.recipient-pill:hover, .recipient-pill.active {
+  border-color: var(--nb-gold-500);
+  background: var(--nb-gold-100);
+}
+
+.recipient-avatar-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin: 0 auto 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Table */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transactions-table th {
+  background: #F8FAFC;
+  color: #64748B;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--nb-border);
+  text-align: left;
+}
+
+.transactions-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--nb-border-subtle);
+  font-size: 0.9rem;
+}
+
+.transactions-table tr:hover td {
+  background: #F8FAFC;
+}
+
+.tx-icon-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.tx-amount {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.tx-amount.credit { color: var(--nb-success); }
+.tx-amount.debit { color: var(--nb-navy-900); }
+
+/* Official Statement Sheet */
+.statement-document {
+  background: #FFFFFF;
+  border: 1px solid var(--nb-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.statement-header {
+  border-bottom: 2px solid var(--nb-navy-900);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}

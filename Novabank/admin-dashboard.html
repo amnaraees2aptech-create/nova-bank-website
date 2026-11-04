@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operations Hub — NovaBank USA Admin Console</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body style="background-color: #F1F5F9;">
+
+  <!-- Top Demo Disclaimer Ribbon -->
+  <div class="demo-disclaimer-banner" style="background: linear-gradient(90deg, #1E1B4B 0%, #0F172A 100%);">
+    <div class="container-fluid d-flex justify-between align-center flex-wrap gap-2">
+      <div class="d-flex align-center">
+        <span class="demo-tag" style="background: var(--nb-danger); color: #fff;"><i class="fa-solid fa-lock me-1"></i> Admin Console</span>
+        <span>Institutional Operations Hub • Internal branch monitoring &amp; compliance simulation</span>
+      </div>
+      <div>
+        <a href="dashboard.html" class="demo-banner-link text-warning"><i class="fa-solid fa-user me-1"></i> Customer Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-wrapper">
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- App Sidebar -->
+    <aside class="app-sidebar" style="background: #0B132B;">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+          <img src="assets/images/logo-white.svg" alt="NovaBank USA">
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-section-title">Institutional Ops</li>
+        <li>
+          <a href="admin-dashboard.html" class="nav-item-link active">
+            <i class="fa-solid fa-chart-pie text-warning"></i>
+            <span>Operations Hub</span>
+          </a>
+        </li>
+        <li>
+          <a href="#customersSection" class="nav-item-link">
+            <i class="fa-solid fa-users"></i>
+            <span>Customer Custody</span>
+          </a>
+        </li>
+        <li>
+          <a href="#complianceSection" class="nav-item-link">
+            <i class="fa-solid fa-shield-virus text-danger"></i>
+            <span>AML / Compliance</span>
+            <span class="badge badge-danger ms-auto">3 Flags</span>
+          </a>
+        </li>
+
+        <li class="sidebar-section-title">Portals</li>
+        <li>
+          <a href="dashboard.html" class="nav-item-link">
+            <i class="fa-solid fa-desktop text-primary"></i>
+            <span>Customer Portal</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html" class="nav-item-link">
+            <i class="fa-solid fa-house"></i>
+            <span>Public Website</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user-card">
+          <img src="assets/images/admin-avatar.svg" alt="Admin" class="sidebar-user-avatar">
+          <div style="overflow: hidden;">
+            <div class="sidebar-user-name">Staff Admin #048</div>
+            <div class="sidebar-user-tier text-warning">Senior Risk Officer</div>
+          </div>
+          <a href="login.html" class="ms-auto text-white-50" title="Sign Out">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <header class="app-header">
+        <div class="d-flex align-center gap-2">
+          <button type="button" class="btn btn-outline-secondary d-md-none" id="sidebarToggleBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="header-greeting-title">Institutional Operations Console</h1>
+            <p class="text-muted small m-0"><i class="fa-solid fa-building me-1 text-primary"></i> Flagship Branch: New York Financial District (ID: #001)</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-center gap-2">
+          <button type="button" class="btn btn-outline-secondary btn-sm btn-reset-demo-state">
+            <i class="fa-solid fa-rotate-left me-1"></i> Reset Demo
+          </button>
+          <a href="dashboard.html" class="btn btn-navy btn-sm">
+            <i class="fa-solid fa-user me-1"></i> Customer View
+          </a>
+        </div>
+      </header>
+
+      <main class="app-content">
+        
+        <!-- 4 Institutional Metric Cards -->
+        <div class="grid-4 mb-4">
+          <div class="stat-card" style="border-left: 4px solid var(--nb-gold-500);">
+            <span class="text-muted small fw-bold text-uppercase">Total Assets Under Custody</span>
+            <div class="stat-amount text-navy">$184,250,000</div>
+            <div class="small text-success fw-bold">
+              <i class="fa-solid fa-arrow-trend-up"></i> +$4.8M this week
+            </div>
+          </div>
+
+          <div class="stat-card" style="border-left: 4px solid var(--nb-gold-500);">
+            <span class="text-muted small fw-bold text-uppercase">Active Retail Accounts</span>
+            <div class="stat-amount text-navy">12,840</div>
+            <div class="small text-success fw-bold">
+              <i class="fa-solid fa-user-plus"></i> +142 new accounts
+            </div>
+          </div>
+
+          <div class="stat-card" style="border-left: 4px solid var(--nb-gold-500);">
+            <span class="text-muted small fw-bold text-uppercase">Daily FedNow / Wire Volume</span>
+            <div class="stat-amount text-navy">$4,215,800</div>
+            <div class="small text-success">
+              <i class="fa-solid fa-circle-check me-1"></i> 100% Cleared
+            </div>
+          </div>
+
+          <div class="stat-card" style="border-left: 4px solid var(--nb-danger);">
+            <span class="text-danger small fw-bold text-uppercase">Compliance Audits Required</span>
+            <div class="stat-amount text-danger" id="adminFlagCount">3</div>
+            <div class="small text-danger fw-bold">
+              <i class="fa-solid fa-triangle-exclamation me-1"></i> High Value / Risk Flags
+            </div>
+          </div>
+        </div>
+
+        <!-- Pure CSS Charts Row -->
+        <div class="grid-sidebar mb-4">
+          
+          <!-- Liquidity & Settlement Pure CSS Bar Chart -->
+          <div class="card p-4">
+            <div class="d-flex justify-between align-center mb-3">
+              <div>
+                <h3 class="fw-bold text-navy fs-lg mb-1">30-Day Liquidity &amp; Settlement Velocity</h3>
+                <p class="text-muted small m-0">Daily gross inflow vs. domestic FedNow settlement outflow</p>
+              </div>
+              <span class="badge badge-secondary">Federal Reserve Feed</span>
+            </div>
+
+            <!-- Pure CSS Chart -->
+            <div class="pure-bar-chart" style="height: 220px;">
+              <div class="chart-bar-group">
+                <div class="chart-bars-wrap">
+                  <div class="chart-bar inflow" style="height: 65%;" title="Oct 01 Inflow: $3.8M"></div>
+                  <div class="chart-bar outflow" style="height: 50%;" title="Oct 01 Outflow: $3.2M"></div>
+                </div>
+                <div class="chart-bar-label">Oct 01</div>
+              </div>
+
+              <div class="chart-bar-group">
+                <div class="chart-bars-wrap">
+                  <div class="chart-bar inflow" style="height: 75%;" title="Oct 04 Inflow: $4.2M"></div>
+                  <div class="chart-bar outflow" style="height: 58%;" title="Oct 04 Outflow: $3.7M"></div>
+                </div>
+                <div class="chart-bar-label">Oct 04</div>
+              </div>
+
+              <div class="chart-bar-group">
+                <div class="chart-bars-wrap">
+                  <div class="chart-bar inflow" style="height: 70%;" title="Oct 07 Inflow: $3.9M"></div>
+                  <div class="chart-bar outflow" style="height: 52%;" title="Oct 07 Outflow: $3.4M"></div>
+                </div>
+                <div class="chart-bar-label">Oct 07</div>
+              </div>
+
+              <div class="chart-bar-group">
+                <div class="chart-bars-wrap">
+                  <div class="chart-bar inflow" style="height: 92%;" title="Oct 10 Inflow: $5.1M"></div>
+                  <div class="chart-bar outflow" style="height: 68%;" title="Oct 10 Outflow: $4.2M"></div>
+                </div>
+                <div class="chart-bar-label">Oct 10</div>
+              </div>
+
+              <div class="chart-bar-group">
+                <div class="chart-bars-wrap">
+                  <div class="chart-bar inflow" style="height: 82%;" title="Oct 13 Inflow: $4.6M"></div>
+                  <div class="chart-bar outflow" style="height: 62%;" title="Oct 13 Outflow: $3.9M"></div>
+                </div>
+                <div class="chart-bar-label">Oct 13</div>
+              </div>
+
+              <div class="chart-bar-group">
+                <div class="chart-bars-wrap">
+                  <div class="chart-bar inflow" style="height: 98%;" title="Oct 15 Inflow: $5.4M"></div>
+                  <div class="chart-bar outflow" style="height: 66%;" title="Oct 15 Outflow: $4.2M"></div>
+                </div>
+                <div class="chart-bar-label">Oct 15</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deposit Tier Breakdown (Pure CSS Progress Bars) -->
+          <div class="card p-4">
+            <h3 class="fw-bold text-navy fs-lg mb-1">Portfolio Distribution</h3>
+            <p class="text-muted small mb-4">Custody assets categorized by relationship tier</p>
+
+            <div class="d-flex flex-column gap-3">
+              <div>
+                <div class="d-flex justify-between small mb-1">
+                  <span class="fw-semibold text-navy">Private Wealth (5.15% APY)</span>
+                  <span class="fw-bold">$78.2M (42%)</span>
+                </div>
+                <div style="background: #F1F5F9; height: 10px; border-radius: 5px; overflow: hidden;">
+                  <div style="background: var(--nb-info); width: 42%; height: 100%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="d-flex justify-between small mb-1">
+                  <span class="fw-semibold text-navy">High-Yield Growth Savings</span>
+                  <span class="fw-bold">$64.5M (35%)</span>
+                </div>
+                <div style="background: #F1F5F9; height: 10px; border-radius: 5px; overflow: hidden;">
+                  <div style="background: var(--nb-warning); width: 35%; height: 100%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="d-flex justify-between small mb-1">
+                  <span class="fw-semibold text-navy">Commercial Checking</span>
+                  <span class="fw-bold">$41.5M (23%)</span>
+                </div>
+                <div style="background: #F1F5F9; height: 10px; border-radius: 5px; overflow: hidden;">
+                  <div style="background: var(--nb-success); width: 23%; height: 100%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-2 mt-4 rounded small text-muted text-center" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
+              Total Custody: <strong>$184.2M</strong> USD
+            </div>
+          </div>
+        </div>
+
+        <!-- Compliance Queue -->
+        <div class="card p-4 mb-4" id="complianceSection">
+          <div class="d-flex justify-between align-center mb-3">
+            <div>
+              <h3 class="fw-bold text-navy fs-lg m-0">AML &amp; Fraud Surveillance Queue</h3>
+              <p class="text-muted small m-0">Automated machine learning anomalies requiring manual officer sign-off</p>
+            </div>
+            <span class="badge badge-danger">Real-Time Surveillance</span>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="table small">
+              <thead style="background: #F8FAFC;">
+                <tr>
+                  <th>Audit ID</th>
+                  <th>Customer Entity</th>
+                  <th>Indicator</th>
+                  <th>Timestamp</th>
+                  <th>Risk Tier</th>
+                  <th class="text-end">Officer Action</th>
+                </tr>
+              </thead>
+              <tbody id="complianceTableBody">
+                <tr id="row-CMP-104">
+                  <td class="font-monospace fw-bold">CMP-104</td>
+                  <td class="fw-bold">Vance Capital LLC</td>
+                  <td>High Value Wire Out ($540,000)</td>
+                  <td class="text-muted">Today 08:30 AM</td>
+                  <td><span class="badge badge-warning">Medium</span></td>
+                  <td class="text-end">
+                    <button type="button" class="btn btn-sm btn-success btn-clear-flag" data-id="CMP-104">
+                      <i class="fa-solid fa-check me-1"></i> Approve Wire
+                    </button>
+                  </td>
+                </tr>
+                <tr id="row-CMP-103">
+                  <td class="font-monospace fw-bold">CMP-103</td>
+                  <td class="fw-bold">Dmitri Rostov</td>
+                  <td>Foreign Jurisdiction Login (Cyprus)</td>
+                  <td class="text-muted">Yesterday 11:20 PM</td>
+                  <td><span class="badge badge-danger">High Risk</span></td>
+                  <td class="text-end">
+                    <button type="button" class="btn btn-sm btn-outline-danger btn-clear-flag" data-id="CMP-103">
+                      <i class="fa-solid fa-shield-halved me-1"></i> Verify KYC
+                    </button>
+                  </td>
+                </tr>
+                <tr id="row-CMP-102">
+                  <td class="font-monospace fw-bold">CMP-102</td>
+                  <td class="fw-bold">Global Luxury Imports</td>
+                  <td>Multiple Rapid Micro-ACH Transactions</td>
+                  <td class="text-muted">Oct 13, 2026</td>
+                  <td><span class="badge badge-secondary">Low</span></td>
+                  <td class="text-end">
+                    <button type="button" class="btn btn-sm btn-success btn-clear-flag" data-id="CMP-102">
+                      <i class="fa-solid fa-check me-1"></i> Clear Audit
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Customer Accounts Table -->
+        <div class="card p-4" id="customersSection">
+          <div class="d-flex justify-between align-center mb-3">
+            <div>
+              <h3 class="fw-bold text-navy fs-lg m-0">Customer Account Registry</h3>
+              <p class="text-muted small m-0">Inspect customer balances, status, and freeze controls</p>
+            </div>
+            <div>
+              <input type="text" class="form-control" id="customerSearchInput" placeholder="Filter customer name..." style="width: 220px;">
+            </div>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="table small">
+              <thead style="background: #F8FAFC;">
+                <tr>
+                  <th>Client ID</th>
+                  <th>Legal Name</th>
+                  <th>Tier</th>
+                  <th>Total Liquid Balance</th>
+                  <th>KYC Status</th>
+                  <th>Status</th>
+                  <th class="text-end">Action</th>
+                </tr>
+              </thead>
+              <tbody id="customersTableBody">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/demo.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin-dashboard.js"></script>
+</body>
+</html>

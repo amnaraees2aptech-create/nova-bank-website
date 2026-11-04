@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accounts &amp; Cards — NovaBank USA</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Demo Disclaimer Ribbon -->
+  <div class="demo-disclaimer-banner">
+    <div class="container-fluid d-flex justify-between align-center flex-wrap gap-2">
+      <div class="d-flex align-center">
+        <span class="demo-tag"><i class="fa-solid fa-flask me-1"></i> Client Showcase</span>
+        <span>Account portfolios, routing numbers, and card management controls</span>
+      </div>
+      <div>
+        <a href="dashboard.html" class="demo-banner-link"><i class="fa-solid fa-gauge-high me-1"></i> Return to Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-wrapper">
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- App Sidebar -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+          <img src="assets/images/logo-white.svg" alt="NovaBank USA">
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-section-title">Portfolios &amp; Accounts</li>
+        <li>
+          <a href="dashboard.html" class="nav-item-link">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="accounts.html" class="nav-item-link active">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Accounts &amp; Cards</span>
+          </a>
+        </li>
+        <li>
+          <a href="transfer.html" class="nav-item-link">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Transfer &amp; Pay</span>
+          </a>
+        </li>
+        <li>
+          <a href="transactions.html" class="nav-item-link">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Transactions</span>
+          </a>
+        </li>
+        <li>
+          <a href="statements.html" class="nav-item-link">
+            <i class="fa-solid fa-file-invoice"></i>
+            <span>Official Statements</span>
+          </a>
+        </li>
+
+        <li class="sidebar-section-title">Settings &amp; Tools</li>
+        <li>
+          <a href="profile.html" class="nav-item-link">
+            <i class="fa-solid fa-user-gear"></i>
+            <span>Profile &amp; Security</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-dashboard.html" class="nav-item-link">
+            <i class="fa-solid fa-shield-halved text-warning"></i>
+            <span>Admin Hub</span>
+            <span class="badge badge-warning text-dark ms-auto">Staff</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user-card">
+          <img src="assets/images/avatar.svg" alt="Alexander Hayes" class="sidebar-user-avatar">
+          <div style="overflow: hidden;">
+            <div class="sidebar-user-name">Alexander Hayes</div>
+            <div class="sidebar-user-tier">Nova Private Client</div>
+          </div>
+          <a href="login.html" class="ms-auto text-white-50" title="Sign Out">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <header class="app-header">
+        <div class="d-flex align-center gap-2">
+          <button type="button" class="btn btn-outline-secondary d-md-none" id="sidebarToggleBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="header-greeting-title">Accounts &amp; Card Management</h1>
+            <p class="text-muted small m-0">Overview of depository accounts, certificates of deposit, and debit controls</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-center gap-2">
+          <button type="button" class="btn btn-outline-navy btn-sm" data-open-modal="directDepositModal">
+            <i class="fa-solid fa-file-lines me-1"></i> Direct Deposit Form
+          </button>
+          <a href="transfer.html" class="btn btn-gold btn-sm">
+            <i class="fa-solid fa-paper-plane me-1"></i> Move Money
+          </a>
+        </div>
+      </header>
+
+      <main class="app-content">
+        <!-- Accounts Overview Cards -->
+        <div class="grid-2">
+          
+          <!-- Premier Checking Card -->
+          <div class="card d-flex flex-column justify-between">
+            <div>
+              <div class="d-flex justify-between align-start mb-3">
+                <div class="d-flex align-center gap-2">
+                  <div class="tx-icon-badge" style="background: #EFF6FF; color: #2563EB;">
+                    <i class="fa-solid fa-building-columns"></i>
+                  </div>
+                  <div>
+                    <h3 class="fw-bold text-navy fs-md mb-0">Premier Checking</h3>
+                    <span class="text-muted fs-sm">Primary Operating Account</span>
+                  </div>
+                </div>
+                <span class="badge badge-success">Active &amp; Insured</span>
+              </div>
+
+              <div class="my-3">
+                <span class="text-muted small">Available Balance</span>
+                <div class="fs-2xl fw-bold text-navy" id="accPageCheckingBalance">$14,850.40</div>
+              </div>
+
+              <div class="p-3 mb-3 rounded small" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
+                <div class="d-flex justify-between py-1 border-bottom">
+                  <span class="text-muted">Account Number:</span>
+                  <div class="d-flex align-center gap-1">
+                    <span class="fw-bold font-monospace">•••• 4892</span>
+                    <button class="btn btn-sm btn-link p-0 text-primary" data-copy-text="04829104892" data-copy-label="Checking Account Number">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="d-flex justify-between py-1 border-bottom">
+                  <span class="text-muted">Routing (ABA):</span>
+                  <div class="d-flex align-center gap-1">
+                    <span class="fw-bold font-monospace">021000021</span>
+                    <button class="btn btn-sm btn-link p-0 text-primary" data-copy-text="021000021" data-copy-label="ABA Routing Number">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="d-flex justify-between py-1">
+                  <span class="text-muted">Monthly Fee:</span>
+                  <span class="text-success fw-bold">$0.00 (Waived)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <a href="transfer.html" class="btn btn-navy btn-sm flex-grow-1">
+                <i class="fa-solid fa-paper-plane me-1"></i> Send Transfer
+              </a>
+              <a href="statements.html" class="btn btn-outline-secondary btn-sm">
+                <i class="fa-solid fa-file-invoice me-1"></i> eStatement
+              </a>
+            </div>
+          </div>
+
+          <!-- High-Yield Growth Savings Card -->
+          <div class="card d-flex flex-column justify-between">
+            <div>
+              <div class="d-flex justify-between align-start mb-3">
+                <div class="d-flex align-center gap-2">
+                  <div class="tx-icon-badge" style="background: #FEF3C7; color: #D97706;">
+                    <i class="fa-solid fa-piggy-bank"></i>
+                  </div>
+                  <div>
+                    <h3 class="fw-bold text-navy fs-md mb-0">High-Yield Growth Savings</h3>
+                    <span class="text-muted fs-sm">Compound Interest Reserve</span>
+                  </div>
+                </div>
+                <span class="badge badge-warning">5.15% APY</span>
+              </div>
+
+              <div class="my-3">
+                <span class="text-muted small">Current Total Balance</span>
+                <div class="fs-2xl fw-bold text-navy" id="accPageSavingsBalance">$38,420.85</div>
+              </div>
+
+              <div class="p-3 mb-3 rounded small" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
+                <div class="d-flex justify-between py-1 border-bottom">
+                  <span class="text-muted">Account Number:</span>
+                  <div class="d-flex align-center gap-1">
+                    <span class="fw-bold font-monospace">•••• 9104</span>
+                    <button class="btn btn-sm btn-link p-0 text-primary" data-copy-text="04829109104" data-copy-label="Savings Account Number">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="d-flex justify-between py-1 border-bottom">
+                  <span class="text-muted">Interest YTD:</span>
+                  <span class="text-success fw-bold">+$1,280.45</span>
+                </div>
+                <div class="d-flex justify-between py-1">
+                  <span class="text-muted">Withdrawal Limits:</span>
+                  <span class="fw-bold">Unlimited</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <a href="transfer.html" class="btn btn-gold btn-sm flex-grow-1">
+                <i class="fa-solid fa-plus me-1"></i> Add Funds
+              </a>
+              <a href="statements.html" class="btn btn-outline-secondary btn-sm">
+                <i class="fa-solid fa-file-invoice me-1"></i> eStatement
+              </a>
+            </div>
+          </div>
+
+          <!-- Private Wealth 18-Mo Fixed CD -->
+          <div class="card d-flex flex-column justify-between">
+            <div>
+              <div class="d-flex justify-between align-start mb-3">
+                <div class="d-flex align-center gap-2">
+                  <div class="tx-icon-badge" style="background: #F3E8FF; color: #9333EA;">
+                    <i class="fa-solid fa-certificate"></i>
+                  </div>
+                  <div>
+                    <h3 class="fw-bold text-navy fs-md mb-0">Private Wealth 18-Mo Fixed CD</h3>
+                    <span class="text-muted fs-sm">Term Certificate of Deposit</span>
+                  </div>
+                </div>
+                <span class="badge badge-secondary">5.45% APY</span>
+              </div>
+
+              <div class="my-3">
+                <span class="text-muted small">Principal Invested</span>
+                <div class="fs-2xl fw-bold text-navy">$25,000.00</div>
+              </div>
+
+              <div class="p-3 mb-3 rounded small" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
+                <div class="d-flex justify-between py-1 border-bottom">
+                  <span class="text-muted">Maturity Date:</span>
+                  <span class="fw-bold">November 18, 2027</span>
+                </div>
+                <div class="d-flex justify-between py-1 border-bottom">
+                  <span class="text-muted">Projected Payout:</span>
+                  <span class="text-success fw-bold">$27,088.12</span>
+                </div>
+                <div class="d-flex justify-between py-1">
+                  <span class="text-muted">Option:</span>
+                  <span class="fw-bold">Auto-Roll or Liquidate</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-outline-navy btn-sm w-100" onclick="NovaApp.showToast('CD Terms: Fixed 5.45% APY locked until Nov 18, 2027.', 'info')">
+              <i class="fa-solid fa-circle-info me-1"></i> CD Certificate Details
+            </button>
+          </div>
+
+          <!-- Card Controls & 3D Interactive Card Module -->
+          <div class="card d-flex flex-column justify-between">
+            <div>
+              <div class="d-flex justify-between align-start mb-3">
+                <div class="d-flex align-center gap-2">
+                  <div class="tx-icon-badge" style="background: #ECFDF5; color: #059669;">
+                    <i class="fa-solid fa-credit-card"></i>
+                  </div>
+                  <div>
+                    <h3 class="fw-bold text-navy fs-md mb-0">Card Controls &amp; Limits</h3>
+                    <span class="text-muted fs-sm">Visa Infinite Titanium Debit (•••• 4892)</span>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary" id="flipCardBtn">
+                  <i class="fa-solid fa-arrows-rotate text-gold me-1"></i> Flip (CVV)
+                </button>
+              </div>
+
+              <!-- 3D Card Mockup -->
+              <div class="virtual-card-wrapper mb-3">
+                <div class="virtual-card-inner" id="virtualDebitCard" title="Click to flip card">
+                  <div class="virtual-card-front">
+                    <div class="card-chips-row">
+                      <img src="assets/images/card-chip.svg" alt="Chip" class="emv-chip">
+                      <img src="assets/images/contactless.svg" alt="Contactless" class="contactless-icon">
+                    </div>
+                    <div class="card-number-display">4532  8920  1450  4892</div>
+                    <div class="card-footer-info">
+                      <div>
+                        <div class="card-holder-name">ALEXANDER HAYES</div>
+                        <div class="text-gold fs-sm letter-spacing-1">NOVA PRIVATE CLIENT</div>
+                      </div>
+                      <div class="text-end">
+                        <div class="small">EXP 08/29</div>
+                        <img src="assets/images/visa-logo.svg" alt="Visa" style="height: 14px; margin-top: 4px;">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="virtual-card-back">
+                    <div class="magnetic-strip"></div>
+                    <div>
+                      <div class="text-white-50 px-3 fs-sm mb-1">Authorized Signature • CVV2:</div>
+                      <div class="card-cvv-panel">CVV: 742</div>
+                    </div>
+                    <div class="px-3 text-white-50 fs-sm">
+                      NovaBank USA • 1-800-555-NOVA • Member FDIC
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Switch Controls -->
+              <div class="d-flex flex-column gap-2 mb-3">
+                <div class="d-flex justify-between align-center p-2 rounded" style="background: #F8FAFC;">
+                  <div>
+                    <div class="fw-bold small text-navy">Lock Card (Freeze Mode)</div>
+                    <div class="text-muted fs-sm">Block all in-store POS and online purchases</div>
+                  </div>
+                  <input class="cursor-pointer" type="checkbox" id="freezeCardToggle" style="width: 18px; height: 18px;">
+                </div>
+
+                <div class="d-flex justify-between align-center p-2 rounded" style="background: #F8FAFC;">
+                  <div>
+                    <div class="fw-bold small text-navy">Contactless NFC Payments</div>
+                    <div class="text-muted fs-sm">Allow tap-to-pay via Apple Pay &amp; Google Wallet</div>
+                  </div>
+                  <input class="cursor-pointer" type="checkbox" checked style="width: 18px; height: 18px;" onchange="NovaApp.showToast('Contactless NFC setting updated.', 'info')">
+                </div>
+              </div>
+
+              <!-- Limit Slider -->
+              <div>
+                <div class="d-flex justify-between align-center mb-1">
+                  <span class="small fw-bold text-navy">Daily POS Limit:</span>
+                  <span class="fw-bold text-primary small" id="dailyLimitLabel">$5,000 / day</span>
+                </div>
+                <input type="range" class="form-range" id="dailyLimitSlider" min="1000" max="25000" step="500" value="5000">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Direct Deposit Modal -->
+  <div class="modal-overlay" id="directDepositModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h4 class="text-white fw-bold"><i class="fa-solid fa-building-columns me-2 text-gold"></i> Direct Deposit Details</h4>
+        <button type="button" class="btn-close" data-close-modal>&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted small mb-3">
+          Provide these routing instructions to your employer or payroll provider to receive automatic direct deposits up to 2 days early.
+        </p>
+
+        <div class="p-3 rounded small" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
+          <div class="d-flex justify-between py-2 border-bottom">
+            <span class="text-muted">Bank Name:</span>
+            <span class="fw-bold">NovaBank USA, N.A.</span>
+          </div>
+          <div class="d-flex justify-between py-2 border-bottom">
+            <span class="text-muted">ABA Routing:</span>
+            <span class="fw-bold font-monospace">021000021</span>
+          </div>
+          <div class="d-flex justify-between py-2 border-bottom">
+            <span class="text-muted">Account Number:</span>
+            <span class="fw-bold font-monospace">04829104892</span>
+          </div>
+          <div class="d-flex justify-between py-2 border-bottom">
+            <span class="text-muted">Account Type:</span>
+            <span class="fw-bold">Checking</span>
+          </div>
+          <div class="d-flex justify-between py-2">
+            <span class="text-muted">SWIFT / BIC:</span>
+            <span class="fw-bold font-monospace">NOVUS33XXX</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-close-modal>Close</button>
+        <button type="button" class="btn btn-gold btn-sm" onclick="window.print()"><i class="fa-solid fa-print me-1"></i> Print Form</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/demo.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/accounts.js"></script>
+</body>
+</html>

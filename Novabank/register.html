@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Account — NovaBank USA Onboarding Showcase</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body style="background: #0A192F;">
+
+  <!-- Top Demo Banner -->
+  <div class="demo-disclaimer-banner">
+    <div class="container d-flex justify-between align-center flex-wrap gap-2">
+      <div class="d-flex align-center">
+        <span class="demo-tag"><i class="fa-solid fa-flask me-1"></i> Demo Registration</span>
+        <span>Educational Prototype • Click "Autofill Demo Application" below to test instantly</span>
+      </div>
+      <div>
+        <a href="index.html" class="demo-banner-link"><i class="fa-solid fa-house me-1"></i> Return Home</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-page-wrapper">
+    <div class="auth-card-container" style="max-width: 1040px;">
+      
+      <!-- Left Side: Trust & Onboarding Perks -->
+      <div class="auth-sidebar-side">
+        <div>
+          <a href="index.html" class="d-inline-flex mb-3">
+            <img src="assets/images/logo-white.svg" alt="NovaBank USA" height="38">
+          </a>
+          
+          <div class="badge badge-warning mb-3">
+            <i class="fa-solid fa-id-card-clip me-1"></i> Digital Account Origination
+          </div>
+
+          <h3 class="fw-bold text-white mb-2">Begin Your Relationship with NovaBank USA</h3>
+          <p class="text-white-50 small mb-4">
+            Enjoy zero minimum fee checking, 5.15% APY High-Yield Savings, and our titanium Visa Infinite debit card.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="d-flex align-center gap-2 text-white-50 small">
+              <i class="fa-solid fa-clock-rotate-left text-gold fs-md"></i>
+              <span>Fast 3-minute digital enrollment</span>
+            </div>
+            <div class="d-flex align-center gap-2 text-white-50 small">
+              <i class="fa-solid fa-credit-card text-gold fs-md"></i>
+              <span>Instant virtual debit card issued for Apple Pay</span>
+            </div>
+            <div class="d-flex align-center gap-2 text-white-50 small">
+              <i class="fa-solid fa-shield-halved text-gold fs-md"></i>
+              <span>No impact to credit score during application</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-top small text-white-50" style="border-color: rgba(255,255,255,0.1) !important;">
+          <div>Member FDIC • USA PATRIOT Act Certified Institution</div>
+          <div class="mt-1">Charter #74921 • New York Financial District</div>
+        </div>
+      </div>
+
+      <!-- Right Side: Onboarding Form -->
+      <div class="auth-form-side">
+        <div class="d-flex justify-between align-center mb-3">
+          <div>
+            <h2 class="fw-bold text-navy mb-1">Open a New Account</h2>
+            <p class="text-muted small">Complete your profile to generate your client portfolio.</p>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-navy" id="btnAutofillApplication">
+            <i class="fa-solid fa-wand-magic-sparkles text-gold me-1"></i> Autofill Demo Data
+          </button>
+        </div>
+
+        <form id="registerDemoForm">
+          <!-- Tier Select -->
+          <div class="form-group mb-3">
+            <label class="form-label">Select Relationship Tier</label>
+            <div class="grid-2">
+              <div class="p-2 border rounded text-center cursor-pointer active" style="background: #FFFBEB; border-color: #F59E0B !important;">
+                <div class="fw-bold text-navy small">Nova Premier Wealth</div>
+                <div class="text-muted fs-sm">5.15% APY • Most Popular</div>
+              </div>
+              <div class="p-2 border rounded text-center cursor-pointer">
+                <div class="fw-bold text-navy small">Nova Private Client</div>
+                <div class="text-muted fs-sm">Titanium Card • Concierge</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Name Fields -->
+          <div class="grid-2 mb-2">
+            <div class="form-group">
+              <label for="regFirstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="regFirstName" placeholder="e.g. Alexander" required>
+            </div>
+            <div class="form-group">
+              <label for="regLastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="regLastName" placeholder="e.g. Hayes" required>
+            </div>
+          </div>
+
+          <!-- Contact Fields -->
+          <div class="grid-2 mb-2">
+            <div class="form-group">
+              <label for="regEmail" class="form-label">Primary Email</label>
+              <input type="email" class="form-control" id="regEmail" placeholder="e.g. alexander.hayes@novabank.us" required>
+            </div>
+            <div class="form-group">
+              <label for="regPhone" class="form-label">Mobile Phone</label>
+              <input type="tel" class="form-control" id="regPhone" placeholder="+1 (212) 555-0198" required>
+            </div>
+          </div>
+
+          <!-- Address Field -->
+          <div class="form-group mb-2">
+            <label for="regAddress" class="form-label">Physical Residential Address</label>
+            <input type="text" class="form-control" id="regAddress" placeholder="742 Park Avenue, Penthouse B, New York, NY 10021" required>
+          </div>
+
+          <!-- Password & SSN -->
+          <div class="grid-2 mb-3">
+            <div class="form-group">
+              <label for="regPassword" class="form-label">Create Vault Password</label>
+              <input type="password" class="form-control" id="regPassword" placeholder="••••••••••••" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Simulated SSN / Tax ID</label>
+              <input type="text" class="form-control" id="regSSN" value="***-**-6789">
+            </div>
+          </div>
+
+          <!-- Checkboxes -->
+          <div class="mb-3">
+            <label class="d-flex align-center gap-1 small text-muted cursor-pointer mb-2">
+              <input type="checkbox" id="checkCitizen" checked required>
+              <span>I certify that I am a US citizen or permanent resident of legal age.</span>
+            </label>
+            <label class="d-flex align-center gap-1 small text-muted cursor-pointer">
+              <input type="checkbox" id="checkTerms" checked required>
+              <span>I agree to the NovaBank USA Deposit Agreement and Disclosures.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-navy w-100 py-2 mb-3" id="btnSubmitApplication">
+            <i class="fa-solid fa-paper-plane me-2"></i> Submit Application &amp; Generate Account
+          </button>
+
+          <div class="text-center">
+            <p class="text-muted small">
+              Already registered? <a href="login.html" class="fw-bold text-navy">Sign in to existing account</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Simulated Instant Approval Modal -->
+  <div class="modal-overlay" id="approvalModal">
+    <div class="modal-box text-center p-4">
+      <div class="text-success mb-2">
+        <i class="fa-solid fa-circle-check" style="font-size: 3.5rem;"></i>
+      </div>
+      <h3 class="fw-bold text-navy mb-1">Application Approved!</h3>
+      <p class="text-muted small mb-3">
+        Welcome to NovaBank USA. Your checking and savings accounts have been provisioned with Member FDIC protection.
+      </p>
+
+      <div class="p-3 rounded text-start mb-3" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
+        <div class="d-flex justify-between py-1 border-bottom">
+          <span class="text-muted small">Account Name:</span>
+          <span class="fw-bold small" id="approvedNameDisplay">Alexander Hayes</span>
+        </div>
+        <div class="d-flex justify-between py-1 border-bottom">
+          <span class="text-muted small">Account Number:</span>
+          <span class="fw-bold small font-monospace">04829104892</span>
+        </div>
+        <div class="d-flex justify-between py-1">
+          <span class="text-muted small">Routing Number:</span>
+          <span class="fw-bold small font-monospace">021000021</span>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-gold w-100 py-2" id="btnEnterDashboardFromRegister">
+        <i class="fa-solid fa-arrow-right me-2"></i> Enter Customer Dashboard
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/demo.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/register.js"></script>
+</body>
+</html>

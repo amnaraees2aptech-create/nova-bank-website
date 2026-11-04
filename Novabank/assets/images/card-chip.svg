@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 40" fill="none">
+  <defs>
+    <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEAA7"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9C7721"/>
+    </linearGradient>
+  </defs>
+  <rect width="50" height="40" rx="8" fill="url(#chipGrad)" stroke="#785B12" stroke-width="1"/>
+  <!-- Circuit patterns -->
+  <line x1="0" y1="20" x2="15" y2="20" stroke="#785B12" stroke-width="1.2"/>
+  <line x1="35" y1="20" x2="50" y2="20" stroke="#785B12" stroke-width="1.2"/>
+  <rect x="15" y="8" width="20" height="24" rx="4" fill="none" stroke="#785B12" stroke-width="1.2"/>
+  <line x1="15" y1="16" x2="35" y2="16" stroke="#785B12" stroke-width="1.2"/>
+  <line x1="15" y1="24" x2="35" y2="24" stroke="#785B12" stroke-width="1.2"/>
+  <line x1="25" y1="8" x2="25" y2="16" stroke="#785B12" stroke-width="1.2"/>
+  <line x1="25" y1="24" x2="25" y2="32" stroke="#785B12" stroke-width="1.2"/>
+  <circle cx="25" cy="20" r="2.5" fill="#785B12"/>
+</svg>

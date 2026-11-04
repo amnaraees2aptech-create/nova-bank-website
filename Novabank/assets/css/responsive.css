@@ -1,0 +1,366 @@
+/* ===================================================================
+   NovaBank USA — Standalone Frontend Showcase
+   Responsive & Print Stylesheet (Pure CSS)
+   =================================================================== */
+
+/* Tablet & Mobile Screens */
+.app-header #sidebarToggleBtn {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    width: min(260px, 85vw);
+    transform: translateX(-100%);
+  }
+
+  .app-sidebar.show-sidebar {
+    transform: translateX(0);
+  }
+
+  .app-main {
+    margin-left: 0;
+    min-width: 0;
+  }
+
+  .app-header #sidebarToggleBtn {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
+  .app-header {
+    padding: 14px 20px;
+  }
+
+  .app-content {
+    min-width: 0;
+  }
+
+  .grid-2 > *,
+  .grid-3 > *,
+  .grid-4 > *,
+  .grid-sidebar > *,
+  .grid-equal > * {
+    min-width: 0;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-equal {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-sidebar-side,
+  .auth-form-side {
+    padding: 28px;
+  }
+
+  .public-navbar .container {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .public-navbar .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .demo-disclaimer-banner .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .app-content {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .app-header > div:first-child {
+    min-width: 0;
+    flex: 1 1 280px;
+  }
+
+  .header-greeting-title {
+    font-size: 1.15rem;
+  }
+
+  .app-header > div:last-child {
+    flex-wrap: wrap;
+  }
+
+  .public-navbar {
+    padding: 12px 0;
+  }
+
+  .public-navbar .container {
+    justify-content: center;
+  }
+
+  .public-navbar .nav-links {
+    gap: 12px 18px;
+  }
+
+  .public-navbar .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .hero-section {
+    padding-top: 56px;
+    padding-bottom: 60px;
+  }
+
+  .hero-section .d-flex.flex-wrap.gap-2.mb-4,
+  .hero-section .d-flex.flex-wrap.gap-3.pt-3.border-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-section .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rates-ticker {
+    padding: 10px 0;
+  }
+
+  .rates-ticker .container {
+    gap: 8px;
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .rates-ticker .badge,
+  .ticker-item {
+    flex: 0 0 auto;
+  }
+
+  .table,
+  .transactions-table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .grid-4, .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header {
+    padding: 12px 16px;
+  }
+
+  .app-header > div:first-child {
+    flex-basis: calc(100% - 48px);
+  }
+
+  .app-header > div:last-child {
+    width: 100%;
+  }
+
+  .app-header > div:last-child .btn {
+    flex: 1 1 auto;
+  }
+
+  .app-header > div:last-child .icon-btn-badge {
+    flex: 0 0 38px;
+  }
+
+  .app-content {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .demo-disclaimer-banner {
+    font-size: 0.75rem;
+    text-align: left;
+  }
+
+  .demo-disclaimer-banner .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .demo-disclaimer-banner .gap-3 {
+    gap: 8px;
+  }
+
+  .public-navbar .container {
+    gap: 10px;
+  }
+
+  .public-navbar .nav-links {
+    justify-content: flex-start;
+    gap: 10px 14px;
+  }
+
+  .public-navbar .nav-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .public-navbar .nav-actions .btn {
+    width: 100%;
+  }
+
+  .auth-page-wrapper {
+    min-height: 100vh;
+    padding: 20px 12px;
+  }
+
+  .auth-card-container {
+    border-radius: var(--radius-lg);
+  }
+
+  .auth-sidebar-side,
+  .auth-form-side {
+    padding: 22px 18px;
+  }
+
+  .modal-overlay {
+    padding: 12px;
+  }
+
+  .modal-body {
+    padding: 18px;
+  }
+
+  .modal-footer {
+    flex-wrap: wrap;
+    padding: 12px 18px;
+  }
+
+  .grid-3.mb-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-amount {
+    font-size: 1.6rem;
+  }
+
+  .virtual-card-wrapper {
+    height: 200px;
+  }
+
+  .statement-document {
+    padding: 20px 14px;
+  }
+
+  .btn {
+    white-space: normal;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* Sidebar Backdrop on Mobile */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 10, 20, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1025;
+  display: none;
+}
+
+.sidebar-backdrop.active {
+  display: block;
+}
+
+/* Print Stylesheet for Statements */
+@media print {
+  .demo-disclaimer-banner,
+  .app-sidebar,
+  .app-header,
+  .btn,
+  .sidebar-backdrop,
+  .no-print,
+  .toast-container,
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  .app-wrapper,
+  .app-main,
+  .app-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #FFFFFF !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .statement-document {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .statement-header {
+    border-bottom: 2px solid #000000 !important;
+  }
+}
